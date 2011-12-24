@@ -1,52 +1,124 @@
 <?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- */
-
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+        <div id="slider">
+            <div id="slogan">
+                <span>РЕСТОРАН "VERNISSAGE"</span>
+                <p>В комплексе «Арена Сити», на Красноармейской, 5, открылся ресторан «Люди», в котором постарались создать повседневную атмосферу, без лишних изысков в меню и интерьере. Владельцы заведения полагают, что их ресторан — для активных и общительных, увлеченных музыкой, путешествиями и технологиями людей.</p>
+            </div>
+            <img src="<?=get_template_directory_uri()?>/images/sliderimage.jpg" alt="slider" />
+        </div>
+        <div id="main">
+            
+            
+            <div class="column first">
+                <div class="news">
+                    <img src="images/newsimg.jpg" alt="news1"/>
+                    <h3>ШОКОЛАДНЫЙ КРЕМ</h3>
 
-			<?php if ( have_posts() ) : ?>
+                    <div class="entry-content">
+                        <p>
+                            Здесь большой выбор легких салатов, быстрых закусок, пирогов и каш. Также добавили позиции из японской кухни вроде классических роллов и мисо-супа. Стены помещения облицованы натуральным деревом.
+                        </p>    
+                    </div>
 
-				<?php twentyeleven_content_nav( 'nav-above' ); ?>
+                    <div class="entry-meta">
+                        <span class="readmore"><a href="#">Узнать Детали <img src="images/arrow.png" alt="arrow" /></a></span>
+                        <span class="date">24.11.11</span>
+                    </div>
+                </div>
+                <div class="news">
+                    <img src="images/newsimg.jpg" alt="news1"/>
+                    <h3>ШОКОЛАДНЫЙ КРЕМ</h3>
 
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+                    <div class="entry-content">
+                        <p>
+                            Здесь большой выбор легких салатов, Здесь большой выбор легких салатов, Здесь большой выбор легких салатов, Здесь большой выбор легких салатов, быстрых закусок, пир роллов и мисо-супа. Стены помещения облицованы натуральным деревом.
+                        </p>    
+                    </div>
 
-					<?php get_template_part( 'content', get_post_format() ); ?>
+                    <div class="entry-meta">
+                        <span class="readmore"><a href="#">Узнать Детали <img src="images/arrow.png" alt="arrow" /></a></span>
+                        <span class="date">24.11.11</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="column">
+                <div class="news">
+                    <img src="images/newsimg.jpg" alt="news1"/>
+                    <h3>ШОКОЛАДНЫЙ КРЕМ</h3>
 
-				<?php endwhile; ?>
+                    <div class="entry-content">
+                        <p>
+                            Здесь большой выбор легкихвроде классических роллов и мисо-супа. Стены помещения облицованы натуральным деревом.
+                        </p>    
+                    </div>
 
-				<?php twentyeleven_content_nav( 'nav-below' ); ?>
+                    <div class="entry-meta">
+                        <span class="readmore"><a href="#">Узнать Детали <img src="images/arrow.png" alt="arrow" /></a></span>
+                        <span class="date">24.11.11</span>
+                    </div>
+                </div>
 
-			<?php else : ?>
+                <div class="news">
+                    <img src="images/newsimg.jpg" alt="news1"/>
+                    <h3>ШОКОЛАДНЫЙ КРЕМ</h3>
 
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h1>
-					</header><!-- .entry-header -->
+                    <div class="entry-content">
+                        <p>
+                            Здесь большой выбор легких салатов, Здесь большой выбор легких салатов, Здесь большой выбор легких салатов, б японской кухни вроде классических роллов и мисо-супа. Стены помещения облицованы натуральным деревом.
+                        </p>    
+                    </div>
 
-					<div class="entry-content">
-						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+                    <div class="entry-meta">
+                        <span class="readmore"><a href="#">Узнать Детали <img src="images/arrow.png" alt="arrow" /></a></span>
+                        <span class="date">24.11.11</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="news">
+                    <img src="images/newsimg.jpg" alt="news1"/>
+                    <h3>ШОКОЛАДНЫЙ КРЕМ</h3>
 
-			<?php endif; ?>
+                    <div class="entry-content">
+                        <p>
+                             Здесь большой выбор легких салатов, Здесь большой выбор легких салатов, быстрых зак Стены помещения облицованы натуральным деревом.
+                        </p>    
+                    </div>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+                    <div class="entry-meta">
+                        <span class="readmore"><a href="#">Узнать Детали <img src="images/arrow.png" alt="arrow" /></a></span>
+                        <span class="date">24.11.11</span>
+                    </div>
+                </div>
+                <div class="news">
+                    <img src="images/newsimg.jpg" alt="news1"/>
+                    <h3>ШОКОЛАДНЫЙ КРЕМ</h3>
 
-<?php get_sidebar(); ?>
+                    <div class="entry-content">
+                        <p>
+                            Здесь большой выбор легких салатов, быстрых закусок, пирогов и каш. Также добавили позиции из японской кухни вроде классических роллов и мисо-супа. Стены помещения облицованы натуральным деревом.
+                        </p>    
+                    </div>
+
+                    <div class="entry-meta">
+                        <span class="readmore"><a href="#">Узнать Детали <img src="images/arrow.png" alt="arrow" /></a></span>
+                        <span class="date">24.11.11</span>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        
+        <div id="social">
+            <div id="vk_like"></div>
+            <script type="text/javascript">
+            VK.Widgets.Like("vk_like", {type: "mini"});
+            </script>
+        </div>
+
+
 <?php get_footer(); ?>

@@ -1,34 +1,23 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content after
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
- */
-?>
-
-	</div><!-- #main -->
-
-	<footer id="colophon" role="contentinfo">
-
-			<?php
-				/* A sidebar in the footer? Yep. You can can customize
-				 * your footer with three columns of widgets.
-				 */
-				get_sidebar( 'footer' );
-			?>
-
-			<div id="site-generator">
-				<?php do_action( 'twentyeleven_credits' ); ?>
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentyeleven' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'twentyeleven' ), 'WordPress' ); ?></a>
-			</div>
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
+        <div id="footer">
+            
+            <div id="sub_menu">
+                <ul>
+                    <li><a href="#">НОВОСТИ</a></li>
+                    <li><a href="#">ВАКАНСИИ</a></li>
+                    <li><a href="#">КОНТАКТЫ</a></li>
+                </ul>
+            </div>
+            <div id="copyright">
+                <p>Copyright © 2011 Vernissage</p>
+                <p>Все права защищены.</p>
+            </div>
+            <div id="f-contacts">
+                <span>0923 УКРАИНА, КИЕВ</span>
+                <p>ул. Лисенка 4</p>
+                <p>+38044 236 03016</p>
+            </div>
+        </div>
+    </div>
 <?php wp_footer(); ?>
-
 </body>
 </html>
