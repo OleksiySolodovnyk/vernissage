@@ -1,12 +1,5 @@
         <div id="footer">
-            
-            <div id="sub_menu">
-                <ul>
-                    <li><a href="#">НОВОСТИ</a></li>
-                    <li><a href="#">ВАКАНСИИ</a></li>
-                    <li><a href="#">КОНТАКТЫ</a></li>
-                </ul>
-            </div>
+            <?php wp_nav_menu( array( 'menu' => 'secondary', 'container_class' => 'sub_menu') ); ?>
             <div id="copyright">
                 <p>Copyright © 2011 Vernissage</p>
                 <p>Все права защищены.</p>
