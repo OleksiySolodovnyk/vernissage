@@ -38,5 +38,5 @@
             <div id="logo">
                 <a href="/"><img src="<?=get_template_directory_uri()?>/images/logo.jpg" alt="logo" /></a>
             </div>
-            <?php wp_nav_menu( array( 'menu' => 'main', 'menu_class' => 'menu' ) ); ?>
+            <?php wp_nav_menu( array( 'menu' => 'main', 'container_class' => 'menu') ); ?>
         </div>
