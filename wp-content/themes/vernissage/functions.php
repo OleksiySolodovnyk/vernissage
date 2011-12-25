@@ -125,11 +125,16 @@ function twentyeleven_setup() {
 	// We'll be using post thumbnails for custom header images on posts and pages.
 	// We want them to be the size of the header image that we just defined
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+	//set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
 	// Add Twenty Eleven's custom image sizes
-	add_image_size( 'large-feature', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for large feature (header) images
-	add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
+	//add_image_size( 'large-feature', HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true ); // Used for large feature (header) images
+	//add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
+        
+        set_post_thumbnail_size(277, 130,  true);
+        add_image_size('medium-feature', 457, 381, true);
+        add_image_size('thumbnail-feature', 277, 130, true);
+        //add_image_size('large', 800, 600, true);
 
 	// Turn on random header image rotation by default.
 	add_theme_support( 'custom-header', array( 'random-default' => true ) );
@@ -324,7 +329,7 @@ add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function twentyeleven_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
+	//return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
 }
 
 /**
