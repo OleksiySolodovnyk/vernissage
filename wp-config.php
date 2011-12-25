@@ -16,16 +16,16 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'maisonch');
+define('DB_NAME', 'vernissage');
 
 /** Имя пользователя MySQL */
-define('DB_USER', 'u_maisonch');
+define('DB_USER', 'vernissage_u');
 
 /** Пароль к базе данных MySQL */
-define('DB_PASSWORD', 'GeUhWxRe');
+define('DB_PASSWORD', 'KdjiwsS3Ds82M');
 
 /** Имя сервера MySQL */
-define('DB_HOST', 'nvh73db.mirohost.net');
+define('DB_HOST', 'localhost');
 
 /** Кодировка базы данных для создания таблиц. */
 define('DB_CHARSET', 'utf8');
