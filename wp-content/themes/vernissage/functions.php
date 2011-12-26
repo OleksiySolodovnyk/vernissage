@@ -93,6 +93,7 @@ function twentyeleven_setup() {
         set_post_thumbnail_size(277, 130,  true);
         add_image_size('medium-feature', 457, 381, true);
         add_image_size('thumbnail-feature', 277, 130, true);
+        add_image_size('restaurant', 695, 411, true);
         //add_image_size('large', 800, 600, true);
 
 	// Turn on random header image rotation by default.
