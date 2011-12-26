@@ -13,18 +13,25 @@ get_header(); ?>
         );
         
         $post_array = get_posts($args);
+              
+        $num_posts = count($post_array);
+        
         
         for ($i = 0; $i < count($post_array); $i+=3)
         {
             $post_array_1[] = $post_array[$i]->ID;
         }
-        for ($i = 1; $i < count($post_array); $i+=3)
-        {
-            $post_array_2[] = $post_array[$i]->ID;
+        if ($num_posts > 1) {
+            for ($i = 1; $i < count($post_array); $i+=3)
+            {
+                $post_array_2[] = $post_array[$i]->ID;
+            }
         }
-        for ($i = 2; $i < count($post_array); $i+=3)
-        {
-            $post_array_3[] = $post_array[$i]->ID;
+        if ($num_posts > 2) {
+            for ($i = 2; $i < count($post_array); $i+=3)
+            {
+                $post_array_3[] = $post_array[$i]->ID;
+            }
         }
         ?>
     
@@ -36,18 +43,22 @@ get_header(); ?>
         <?php } wp_reset_query(); ?>
         </div>
         <div class="column">
+        <?php if (!empty($post_array_2)) { ?>
         <?php query_posts(array('post__in' => $post_array_2)); while (have_posts()) { the_post(); ?>
             <?php                
                 get_template_part( 'content', get_post_format() );
             ?>    
         <?php } wp_reset_query(); ?>
+        <?php } ?>
         </div>
         <div class="column">
+        <?php if (!empty($post_array_2)) { ?>
         <?php query_posts(array('post__in' => $post_array_3)); while (have_posts()) { the_post(); ?>
             <?php                
                 get_template_part( 'content', get_post_format() );
             ?>    
         <?php } wp_reset_query(); ?>
+        <?php } ?>
         </div>
     
     <?php else : ?>
