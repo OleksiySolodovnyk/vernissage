@@ -14,7 +14,16 @@ get_header(); ?>
                 <div class="res-column">
                     <h3>CONTACT</h3>
                     <div class="google-map">
-                        <img src="images/map.jpg" alt="map" />
+                        <?php
+
+                        if(function_exists('pronamic_google_maps')) {
+                            pronamic_google_maps(array(
+                                'width' => 200,
+                                'height' => 200,
+                                'static' => true
+                            ));
+                        }
+                        ?>
                     </div>
                     <p><?php echo get_post_meta($post->ID, 'reservation', true); ?></p>
                     <p><?php echo get_post_meta($post->ID, 'address', true); ?></p>
@@ -23,19 +32,8 @@ get_header(); ?>
                     <img src="<?php bloginfo('template_directory'); ?>/images/master.png" alt="master" />
                     
                     <div id="hours">
-                        <p><?php echo get_post_meta($post->ID, 'openingHours', true); ?></p>
                         <h3>OPENING HOURS</h3>
-                        <span>Breakfast</span>
-                        <p>Monday to Friday:</p>
-                        <p>open from 7.30am, last orders at 10.45am</p>
-                        <p>Saturday and Sunday:</p>
-                        <p>open from 8am, last orders at 10.45am</p>
-                        <span>Lunch</span>
-                        <p>Monday to Sunday:</p>
-                        <p>open from midday, last orders at 3pm</p>
-                        <span>Dinner</span>
-                        <p>Monday to Sunday:</p>
-                        <p>open from 6pm, last orders at 10pm</p>
+                        <p><?php echo get_post_meta($post->ID, 'openingHours', true); ?></p>
                     </div>
                 </div>
             </div>

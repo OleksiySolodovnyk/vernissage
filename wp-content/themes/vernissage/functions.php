@@ -555,3 +555,16 @@ function twentyeleven_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'twentyeleven_body_classes' );
 
+function enable_more_buttons($buttons) {
+  $buttons[] = 'hr';
+ 
+  /* 
+  Repeat with any other buttons you want to add, e.g.
+	  $buttons[] = 'fontselect';
+	  $buttons[] = 'sup';
+  */
+ 
+  return $buttons;
+}
+add_filter("mce_buttons", "enable_more_buttons");
+
