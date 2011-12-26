@@ -7,19 +7,22 @@
     </div>
     
     <div id="content">
+        <?php $count=0; ?>
+        <?php while ( have_posts() ) : the_post(); ?>
         <div class="briefcareer">
-            <a class="title" href="#">Executive Sous Chef</a>
-            <p>Assists the Executive Chef in exceeding guest satisfaction, financial, and employee satisfaction targets through the leadership</p>
-             <span class="readmore"><a href="#">Get Details<img src="images/arrow.png" alt="arrow" /></a></span>
+            <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <?php the_excerpt(); ?>
+             <span class="readmore"><a href="<?php the_permalink(); ?>">Get Details<img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
         </div>
-        
-        <div class="careerdivider"></div>
-        
-        <div class="briefcareer">
-            <a class="title" href="#">Executive Pastry Chef</a>
-            <p>Actively engages both culinary colleagues and guests to continually seek feedback to improve the culinary pastry. </p>
-             <span class="readmore"><a href="#">Get Details<img src="images/arrow.png" alt="arrow" /></a></span>
-        </div>  
+        <?php
+            $count++;
+            if($count == 4) {
+                $count = 0;
+        ?>    
+            <div class="careerdivider"></div>
+        <?php } ?>
+        <?php endwhile; ?>
+              
     </div>
 </div>
 <div id="social">
