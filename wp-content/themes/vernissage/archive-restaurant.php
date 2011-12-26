@@ -5,7 +5,7 @@ get_header(); ?>
 <div id="divider"></div>
 <div id="main">
    
-    <?php if ( have_posts() ) : ?>
+     <?php while ( have_posts() ) : the_post(); ?>
     
     <div class="restaurant">
         <div class="res-column first">
@@ -41,7 +41,7 @@ get_header(); ?>
         </div>
     </div>
     
-    <?php endif; ?>
+    <?php endwhile; ?>
     
 </div>
 <div id="social">
