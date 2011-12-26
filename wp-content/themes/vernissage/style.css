@@ -698,15 +698,11 @@ address em {
 }
 /* END SLIDER ABOUT RESTARAUNT */
 
-#res-menu {
-    margin-top: 15px;
-}
-
-#res-menu ul {
+.restaurant ul {
     margin-left: 32px;
 }
 
-#res-menu ul li {
+.restaurant ul li {
     font-size: 16px;
     padding-left: 15px;
     list-style: none;
@@ -714,13 +710,10 @@ address em {
     line-height: 35px;
 }
 
-#res-menu ul li strong {
+.restaurant ul li strong {
     color: #000;
 }
-#res-menu ul li span {
-    color: #fd6700;
-    font-weight: bold;
-}
+
 
 #hours {
     border-top: 1px solid #d9d9d9;

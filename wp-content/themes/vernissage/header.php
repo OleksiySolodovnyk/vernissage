@@ -29,6 +29,9 @@
     <script type="text/javascript">
       VK.init({apiId: 2718494, onlyWidgets: true});
     </script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/imgslider.js"></script>
+    
 </head>
 <body>
     <div id="wrapper">
