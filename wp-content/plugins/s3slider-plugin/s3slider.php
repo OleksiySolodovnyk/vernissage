@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Plugin Name: S3Slider
 Plugin URI: http://vinicius.soylocoporti.org.br/s3slider-wordpress-plugin/
