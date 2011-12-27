@@ -25,7 +25,23 @@
         <?php } wp_reset_query(); ?>
     </div>
     <div id="map">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/mapcontact.jpg" alt="map"/>
+        <?php
+
+        if(function_exists('pronamic_google_maps_mashup')) {
+            pronamic_google_maps_mashup(
+                array(
+                    'post_type' => 'restaurant'
+                ) , 
+                array(
+                    'width' => 930 ,
+                    'height' => 400 , 
+                    'marker_options' => array(
+                        'icon' => 'http://maisonchambaudie.com.ua/wp-content/themes/vernissage/images/pointer.png'
+                    )
+                )
+            );
+        }
+        ?>
     </div>
 </div>
 <div id="social">
