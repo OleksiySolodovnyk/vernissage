@@ -339,6 +339,10 @@ div.menu ul li:hover > ul {
     float: left;
 }
 
+.button_vk, .button_gp, .button_twi, .fb-like {
+    float: left;
+}
+
 .sub_menu {
     margin-left: 64px;
     margin-top: 23px;

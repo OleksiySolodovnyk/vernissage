@@ -95,7 +95,26 @@ get_header(); ?>
 </div>
         
 <div id="social">
-
+    <div class="button button_vk">
+        <div id="vk_like"></div>
+        <script type="text/javascript">
+         VK.Widgets.Like('vk_like', {type: "mini", pageUrl: "<?php echo get_post_type_archive_link('news') ?>"});
+        </script>
+    </div>    
+    <div class="button button_gp">
+        <g:plusone size="medium" href="<?php echo get_post_type_archive_link('news') ?>"></g:plusone>
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+    </div>
+    <div class="button button_twi">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo get_post_type_archive_link('news') ?>" data-text="<?php the_title(); ?>" data-count="horizontal" data-via="TwiName-CHANGE">Твитнуть</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+    <div class="fb-like" data-href="<?php echo get_post_type_archive_link('news') ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
 </div>
 
 
