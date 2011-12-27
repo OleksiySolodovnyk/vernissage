@@ -535,6 +535,7 @@ h1 {
     font-size:36px;
     color: #000;
     font-weight: bold;
+    line-height: 40px;
 }
 
 h2,
@@ -648,8 +649,10 @@ address em {
     line-height: 20px;
 }
 
-.res-column.first h3 {
+.res-column.first h3 a {
     font-family: CharterBlC;
+    text-decoration: none;
+    color: #fd6700;
 }
 
 .res-column h3 {

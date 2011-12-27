@@ -9,7 +9,7 @@ get_header(); ?>
     
     <div class="restaurant">
         <div class="res-column first">
-            <h3><? the_title(); ?></h3>
+            <h3><a href="<?php the_permalink(); ?>"><? the_title(); ?></a></h3>
             <div class="careerdivider"></div>
             <p><? the_excerpt(); ?></p>
             <?php the_post_thumbnail('restaurant'); ?>
