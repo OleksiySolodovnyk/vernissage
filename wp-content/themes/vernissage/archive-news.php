@@ -1,9 +1,12 @@
-<?php
-get_header(); ?>
+<?php get_header(); ?>
 
-        <?php s3slider_show(); ?>
-
-<div id="main">    
+<div id="divider"></div>
+<div id="main">
+    <div id="header">
+        <h1>NEWS</h1>
+    </div>
+    <?php if ( have_posts() ) : ?>
+    
         <?php
         
         $args = array(
@@ -91,11 +94,11 @@ get_header(); ?>
         <?php } wp_reset_query(); ?>
         <?php } ?>
         </div>
+    
+    <?php else : ?>
+            <h3><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h3>
+    <?php endif; ?>
 </div>
-        
 <div id="social">
-
 </div>
-
-
 <?php get_footer(); ?>

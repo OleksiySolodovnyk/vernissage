@@ -14,82 +14,59 @@
 
 get_header(); ?>
 
-<div id="divider"></div>
-<div id="main">
-    <div id="header">
-        <h1>NEWS</h1>
-    </div>
-    <?php if ( have_posts() ) : ?>
-    
-        <?php
-        
-        $args = array(
-            'orderby'   => 'post_date',
-            'order'     => 'DESC'
-        );
-        
-        $post_array = get_posts($args);
-        
-        $num_posts = count($post_array);
-        
-        
-        for ($i = 0; $i < count($post_array); $i+=3)
-        {
-            $post_array_1[] = $post_array[$i]->ID;
-        }
-        if ($num_posts > 1) {
-            for ($i = 1; $i < count($post_array); $i+=3)
-            {
-                $post_array_2[] = $post_array[$i]->ID;
-            }
-        }
-        if ($num_posts > 2) {
-            for ($i = 2; $i < count($post_array); $i+=3)
-            {
-                $post_array_3[] = $post_array[$i]->ID;
-            }
-        }
-        ?>
-    
-        <div class="column first">
-        <?php query_posts(array('post__in' => $post_array_1)); while (have_posts()) { the_post(); ?>
-            <?php                
-                get_template_part( 'content', get_post_format() );
-            ?>    
-        <?php } wp_reset_query(); ?>
-        </div>
-        <div class="column">
-        <?php if (!empty($post_array_2)) { ?>
-        <?php query_posts(array('post__in' => $post_array_2)); while (have_posts()) { the_post(); ?>
-            <?php                
-                get_template_part( 'content', get_post_format() );
-            ?>    
-        <?php } wp_reset_query(); ?>
-        <?php } ?>
-        </div>
-        <div class="column">
-        <?php if (!empty($post_array_2)) { ?>
-        <?php query_posts(array('post__in' => $post_array_3)); while (have_posts()) { the_post(); ?>
-            <?php                
-                get_template_part( 'content', get_post_format() );
-            ?>    
-        <?php } wp_reset_query(); ?>
-        <?php } ?>
-        </div>
-    
-    <?php else : ?>
-        <article id="post-0" class="post no-results not-found">
-                <header class="entry-header">
-                        <h1 class="entry-title"><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h1>
-                </header><!-- .entry-header -->
+		<section id="primary">
+			<div id="content" role="main">
 
-                <div class="entry-content">
-                        <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
-                        <?php get_search_form(); ?>
-                </div>
-        </article>
-    <?php endif; ?>
-</div>
-<div id="social">
-</div>
+			<?php if ( have_posts() ) : ?>
+
+				<header class="page-header">
+					<h1 class="page-title">
+						<?php if ( is_day() ) : ?>
+							<?php printf( __( 'Daily Archives: %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' ); ?>
+						<?php elseif ( is_month() ) : ?>
+							<?php printf( __( 'Monthly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+						<?php elseif ( is_year() ) : ?>
+							<?php printf( __( 'Yearly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+						<?php else : ?>
+							<?php _e( 'Blog Archives', 'twentyeleven' ); ?>
+						<?php endif; ?>
+					</h1>
+				</header>
+
+				<?php twentyeleven_content_nav( 'nav-above' ); ?>
+
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
+					?>
+
+				<?php endwhile; ?>
+
+				<?php twentyeleven_content_nav( 'nav-below' ); ?>
+
+			<?php else : ?>
+
+				<article id="post-0" class="post no-results not-found">
+					<header class="entry-header">
+						<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h1>
+					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
+						<?php get_search_form(); ?>
+					</div><!-- .entry-content -->
+				</article><!-- #post-0 -->
+
+			<?php endif; ?>
+
+			</div><!-- #content -->
+		</section><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

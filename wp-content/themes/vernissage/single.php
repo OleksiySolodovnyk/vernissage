@@ -9,33 +9,24 @@
 
 get_header(); ?>
 
+		<div id="primary">
+			<div id="content" role="main">
 
-<div id="divider"></div>
-<div id="main">
-    <?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-            <div id="header">
-                <h1><?php the_title(); ?></h1>
-                <span><?php twentyeleven_posted_on(); ?></span>
-            </div>
+					<nav id="nav-single">
+						<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentyeleven' ); ?></h3>
+						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'twentyeleven' ) ); ?></span>
+						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?></span>
+					</nav><!-- #nav-single -->
 
-            <div class="desc-column first">
-                <?php the_post_thumbnail('medium-feature'); ?>
-                <div class="photo-desc">
-                    <p><?php echo get_post_field('post_excerpt', get_post_thumbnail_id($post_ID)); ?></p>
-                    <p><?php echo get_post_field('post_content', get_post_thumbnail_id($post_ID)); ?></p>
-                </div>
-            </div>
+					<?php get_template_part( 'content', 'single' ); ?>
 
-            <div class="desc-column">
-                <?php the_content(); ?>
-                <span class="readmore"><a href="javascript:window.history.back();"><img class="left-arrow" src="<?php echo get_template_directory_uri(); ?>/images/arrow-left.png" alt="arrow" />Back</a></span>
-            </div>
+					<?php comments_template( '', true ); ?>
 
-    <?php endwhile; // end of the loop. ?>
-</div>
-<div id="social">
+				<?php endwhile; // end of the loop. ?>
 
-</div>
+			</div><!-- #content -->
+		</div><!-- #primary -->
 
 <?php get_footer(); ?>

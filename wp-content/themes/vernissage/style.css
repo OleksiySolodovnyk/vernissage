@@ -208,7 +208,7 @@ div.menu a {
     background: url('images/menu-hover.png') no-repeat transparent;
 } */
 
-div.menu ul li.current_page_item a {
+div.menu ul li.current-menu-item a {
     background: url('images/menu-hover.png') no-repeat transparent;
 }
 

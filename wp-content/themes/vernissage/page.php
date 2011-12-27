@@ -14,6 +14,9 @@
 
 get_header(); ?>
 
+<div id="divider"></div>
+
+<div id="main">
 		<div id="primary">
 			<div id="content" role="main">
 
@@ -25,5 +28,6 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
+</div>
 
 <?php get_footer(); ?>
