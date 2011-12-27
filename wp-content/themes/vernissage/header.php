@@ -27,8 +27,15 @@
         
     <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?45"></script>
     <script type="text/javascript">
-      VK.init({apiId: 2718494, onlyWidgets: true});
+      VK.init({apiId: 2735430, onlyWidgets: true});
     </script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/imgslider.js"></script>
     <?php wp_head(); ?> 
