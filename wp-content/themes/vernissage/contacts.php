@@ -12,7 +12,7 @@
     <div id="content">
         <?php query_posts(array('post_type' => 'restaurant', 'post__in' => $post_array_1)); while (have_posts()) { the_post(); ?>
         <div class="contacts">
-            <a class="title" href="#"><?php the_title(); ?></a>
+            <a class="title" href="javascript:MoveToGoogleMarker(<?=substr(get_post_meta($post->ID, Pronamic_Google_Maps_Post::META_KEY_LATITUDE, true),0,7);?>, <?=substr(get_post_meta($post->ID, Pronamic_Google_Maps_Post::META_KEY_LONGITUDE, true),0,7);?>);"><?php the_title(); ?></a>
             <p><?php echo get_post_meta($post->ID, 'address', true); ?></p>
             <address><em><?php echo get_post_meta($post->ID, 'reservation', true); ?></em></address>
             <!--<address><em>+380 44 230 94 36</em></address>-->

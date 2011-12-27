@@ -6,6 +6,16 @@
  * @author Remco Tolsma
  * @version 1.0
  */
+
+// Added GoogleMarkers where will be stored markers on the map
+var GoogleMarkers = {};
+
+// Will move mapt to the marker
+function MoveToGoogleMarker(latitude, longitude)
+{
+    google.maps.event.trigger(GoogleMarkers[latitude + ',' + longitude], 'click');
+}
+
 (function($) {
 	var methods = {
 		/**
@@ -94,6 +104,7 @@
 
 				// Associated the Google Maps with the element so other developers can easily retrieve the Google Maps object
 				element.data("google-maps", map);
+                                $
 
 				// Create one info window where the details from the posts will be displayed in
 				var infoWindow = new google.maps.InfoWindow();
@@ -116,8 +127,14 @@
 						} , 
 						info.markerOptions
 					);
-
+                                        
+                                        
+                                        
 					var marker = new google.maps.Marker(markerOptions);
+                                        
+                                        // Save current markers to the array
+                                        GoogleMarkers[info.latitude.toString().substr(0,7) + "," + info.longitude.toString().substr(0,7)] = marker;
+                                        
 
 					item.data("google-maps-marker", marker);
 
@@ -171,6 +188,7 @@
 		$(".pgm").pronamicGoogleMaps();
 		
 		$(".pgmm").pronamicGoogleMapsMashup();
+                
 	};
 
 	/**
