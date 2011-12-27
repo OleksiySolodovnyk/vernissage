@@ -38,6 +38,7 @@ get_header(); ?>
         <?php query_posts(array('post_type' => 'news', 'post__in' => $post_array_1)); while (have_posts()) { the_post(); ?>
             <div class="news">
                 <?php echo the_post_thumbnail(); ?>
+                
                 <h3><?php the_title(); ?></h3>
 
                 <div class="entry-content">
