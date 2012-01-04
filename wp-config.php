@@ -42,14 +42,16 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'впишите сюда уникальную фразу');
-define('SECURE_AUTH_KEY',  'впишите сюда уникальную фразу');
-define('LOGGED_IN_KEY',    'впишите сюда уникальную фразу');
-define('NONCE_KEY',        'впишите сюда уникальную фразу');
-define('AUTH_SALT',        'впишите сюда уникальную фразу');
-define('SECURE_AUTH_SALT', 'впишите сюда уникальную фразу');
-define('LOGGED_IN_SALT',   'впишите сюда уникальную фразу');
-define('NONCE_SALT',       'впишите сюда уникальную фразу');
+define('AUTH_KEY',         'ym2#v*r &/m4?-KN=/c{dn|$pd-1[q0:Mw8(kL?VP!8M4hd@|u pjngV<Os4ttvm');
+define('SECURE_AUTH_KEY',  'UU&Hsfyjp&b<:=kUF]zNhnz:Iq.jQE] Q;+SR1=@tq4]St2kf/vsk/fg+dM8},]j');
+define('LOGGED_IN_KEY',    'c`EsG$>NnbFb.fYd_hJv#g|y-.}ha91`/MEqDi<qs)6Gh!nP3S/3ggx~:+wi9`Dc');
+define('NONCE_KEY',        'OdF+#HX-1&AS-pmW2&bE<f^-dFja_aTs[svHB9d+u0xjZ~D)C.wq+vdbW}8B-DoE');
+define('AUTH_SALT',        'S4+]}MGoOTk^E2I:Z4!3Fx++4{XWY5n$khqO/5e&%Y_oa7j`( +3kcX7|l^y|l74');
+define('SECURE_AUTH_SALT', 'pL+Quz%<wM.E$+2xZDfxa8t%)K:nwKFZYFrG[b0o .OU9C0Q_l&BYI<%:I+CB:.a');
+define('LOGGED_IN_SALT',   '01Us9]s|K`[N%*3?b)gYy=JuwN}q:A,8HaV-#0xakn`0@nE@>gtt}llDq=}Zxd|0');
+define('NONCE_SALT',       'Kmz.Z+|S.5[|E7#%w_{w{~B!7XIBN4ghCR8R5DCvdEQG@4(i]ijSEwXOW8@,9Xm8');
+
+
 
 /**#@-*/
 

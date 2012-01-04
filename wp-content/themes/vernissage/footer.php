@@ -1,5 +1,19 @@
         <div id="footer">
-            <?php wp_nav_menu( array( 'menu' => 'secondary', 'container_class' => 'sub_menu') ); ?>
+            <?php 
+            $lng = qtrans_getLanguage();
+            if ($lng == "ru")
+            {
+                wp_nav_menu( array( 'menu' => 'secondary_ru', 'container_class' => 'sub_menu') );
+            }
+            else if ($lng == "en")
+            {
+                wp_nav_menu( array( 'menu' => 'secondary_en', 'container_class' => 'sub_menu') );
+            }
+            else if ($lng == "fr")
+            {
+                wp_nav_menu( array( 'menu' => 'secondary_fr', 'container_class' => 'sub_menu') );
+            }
+            ?>
             <div id="copyright">
                 <p>Copyright © 2011 Vernissage</p>
                 <p>Все права защищены.</p>
