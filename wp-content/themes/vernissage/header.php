@@ -49,4 +49,34 @@
                 <a href="/"><img src="<?=get_template_directory_uri()?>/images/logo.jpg" alt="logo" /></a>
             </div>
             <?php wp_nav_menu( array( 'menu' => 'main', 'container_class' => 'menu') ); ?>
+            
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+            
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            
+            
+            <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+            
+                <h1>SIDEBAR-1</h1>
+
+            <?php endif; // end sidebar widget area ?>
+            
+            
         </div>

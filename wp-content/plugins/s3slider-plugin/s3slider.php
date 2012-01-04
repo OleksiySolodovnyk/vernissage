@@ -1,17 +1,7 @@
 ﻿<?php
-/*
-Plugin Name: S3Slider
-Plugin URI: http://vinicius.soylocoporti.org.br/s3slider-wordpress-plugin/
-Description: S3Slider front-end for Wordpress. Plugin to manage and generate a nice image sliding effect in your blog. S3Slider and jQuery based.
-Version: 0.06
-Author: Vinicius Massuchetto
-Author URI: http://vinicius.soylocoporti.org.br
-*/
-
 // Must be commented to activate plugin
 //$wpdb->show_errors();
 
-	
 	
 if ( function_exists('plugins_url') )
     $url = plugins_url(plugin_basename(dirname(__FILE__)));
