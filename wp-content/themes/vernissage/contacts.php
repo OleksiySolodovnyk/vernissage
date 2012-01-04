@@ -13,8 +13,21 @@
         <?php query_posts(array('post_type' => 'restaurant', 'post__in' => $post_array_1)); while (have_posts()) { the_post(); ?>
         <div class="contacts">
             <a class="title" href="javascript:MoveToGoogleMarker(<?=substr(get_post_meta($post->ID, Pronamic_Google_Maps_Post::META_KEY_LATITUDE, true),0,7);?>, <?=substr(get_post_meta($post->ID, Pronamic_Google_Maps_Post::META_KEY_LONGITUDE, true),0,7);?>);"><?php the_title(); ?></a>
-            <p><?php echo get_post_meta($post->ID, 'address', true); ?></p>
-            <address><em><?php echo get_post_meta($post->ID, 'reservation', true); ?></em></address>
+            <p>
+                <?php
+                    $lng = qtrans_getLanguage();
+                    $key = "address_" .$lng;
+                    echo get_post_meta($post->ID, $key, true);
+                ?>
+            </p>
+            <address>
+            <em>
+                <?php
+                    $lng = qtrans_getLanguage();
+                    $key = "reservation_" .$lng;
+                    echo get_post_meta($post->ID, $key, true);
+                ?>
+            </em></address>
             <!--<address><em>+380 44 230 94 36</em></address>-->
             <div class="icons">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/wifi.jpg" alt="WiFi"/>
