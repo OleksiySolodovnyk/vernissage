@@ -24,7 +24,9 @@
 	?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-        
+    
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/c_config.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/c_smartmenus.js"></script>
     <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?45"></script>
     <script type="text/javascript">
       VK.init({apiId: 2735430, onlyWidgets: true});
@@ -49,29 +51,7 @@
                 <a href="/"><img src="<?=get_template_directory_uri()?>/images/logo.jpg" alt="logo" /></a>
             </div>
             <?php wp_nav_menu( array( 'menu' => 'main', 'container_class' => 'menu') ); ?>
-            
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            
-            
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            
-            
+                        
             <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
             
                 <h1>SIDEBAR-1</h1>

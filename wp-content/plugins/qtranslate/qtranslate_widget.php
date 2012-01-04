@@ -77,22 +77,29 @@ function qtrans_generateLanguageSelectCode($style='', $id='') {
 		case 'image':
 		case 'text':
 		case 'dropdown':
-			echo '<ul class="qtrans_language_chooser" id="'.$id.'">';
-			foreach(qtrans_getSortedLanguages() as $language) {
-				$classes = array('lang-'.$language);
-				if($language == $q_config['language'])
-					$classes[] = 'active';
-				echo '<li class="'. implode(' ', $classes) .'"><a href="'.qtrans_convertURL($url, $language).'"';
-				// set hreflang
-				echo ' hreflang="'.$language.'" title="'.$q_config['language_name'][$language].'"';
-				if($style=='image')
-					echo ' class="qtrans_flag qtrans_flag_'.$language.'"';
-				echo '><span';
-				if($style=='image')
-					echo ' style="display:none"';
-				echo '>'.$q_config['language_name'][$language].'</span></a></li>';
-			}
-			echo "</ul><div class=\"qtrans_widget_end\"></div>";
+                        echo '<ul id="Menu1" class="MM" style="top: 47px; left: 888px;">';
+                            echo '<li>';
+                                foreach(qtrans_getSortedLanguages() as $language) {
+                                    if($language == $q_config['language']) {
+                                        echo '<a style="padding-left: 18px; border-left: 1px dotted #c4303e; height: 13px;" href="'.qtrans_convertURL($url, $language).'" hreflang="'.$language.'"';
+                                        echo 'title="'.$q_config['language_name'][$language].'">';
+                                        echo $q_config['language_name'][$language].'</a>';
+                                    }
+                                }
+                                echo '<ul>';
+                                foreach(qtrans_getSortedLanguages() as $language) {
+                                    if($language != $q_config['language']) {
+                                        echo '<li><a style="padding-left: 18px;" href="'.qtrans_convertURL($url, $language).'" hreflang="'.$language.'"';
+                                        echo 'title="'.$q_config['language_name'][$language].'">';
+                                        echo $q_config['language_name'][$language].'</a></li>';
+                                    }
+                                }
+                                echo '</ul>';
+                            echo '</li>';
+                        echo '</ul>';
+                    
+			
+			echo "<div class=\"qtrans_widget_end\"></div>";
 			if($style=='dropdown') {
 				echo "<script type=\"text/javascript\">\n// <![CDATA[\r\n";
 				echo "var lc = document.getElementById('".$id."');\n";
