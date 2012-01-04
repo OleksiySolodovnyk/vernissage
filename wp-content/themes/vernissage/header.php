@@ -50,8 +50,26 @@
             <div id="logo">
                 <a href="/"><img src="<?=get_template_directory_uri()?>/images/logo.jpg" alt="logo" /></a>
             </div>
-            <?php wp_nav_menu( array( 'menu' => 'main', 'container_class' => 'menu') ); ?>
-                        
+           
+            <?php
+            
+            $lng = qtrans_getLanguage();
+            if ($lng == "ru")
+            {
+                wp_nav_menu( array( 'menu' => 'main_ru', 'container_class' => 'menu') );
+            }
+            else if ($lng == "en")
+            {
+                wp_nav_menu( array( 'menu' => 'main_en', 'container_class' => 'menu') );
+            }
+            else if ($lng == "fr")
+            {
+                wp_nav_menu( array( 'menu' => 'main_fr', 'container_class' => 'menu') );
+            }
+            
+            //wp_nav_menu( array( 'menu' => 'main', 'container_class' => 'menu') );
+            ?>    
+
             <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
             
                 <h1>SIDEBAR-1</h1>
