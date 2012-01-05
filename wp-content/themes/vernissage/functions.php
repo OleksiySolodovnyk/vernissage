@@ -153,3 +153,18 @@ function enable_more_buttons($buttons) {
 }
 add_filter("mce_buttons", "enable_more_buttons");
 
+
+
+/* Modify ballon of pronamic google maps*/
+
+function prefix_pgmm_item($itemContent) {
+	$itemContent = '';
+	$itemContent .= '<a class="title" href="'. get_permalink() .'">';
+	$itemContent .= 	get_the_title();
+	$itemContent .= '</a>';
+	$itemContent .= '<br />';
+	$itemContent .= '<span class="address">' . get_post_meta(get_the_id(), Pronamic_Google_Maps_Post::META_KEY_ADDRESS, true) . "</span>";
+	return $itemContent;
+}
+
+add_filter('pronamic_google_maps_mashup_item', 'prefix_pgmm_item');

@@ -540,7 +540,8 @@ h1 {
 
 h2,
 .briefcareer .title,
-.contacts .title {
+.contacts .title,
+.pgmm .title {
     font-size: 16px;
     line-height:20px;
     color: #c3303d;
@@ -553,7 +554,8 @@ h2,
 
 
 .briefcareer .title:hover,
-.contacts .title:hover {
+.contacts .title:hover,
+.pgmm .title:hover {
     color: #fd6700;
     border-bottom: 1px dotted #fd6700;
 }
@@ -755,4 +757,9 @@ address em {
 
 #qtranslate-3 {
     list-style: none;
+}
+
+.pgmm span
+{
+    font-size: 12px;
 }
