@@ -19,7 +19,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
+		echo ' | ' . sprintf('Page %s', max( $paged, $page ) );
 
 	?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

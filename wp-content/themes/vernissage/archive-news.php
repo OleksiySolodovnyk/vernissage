@@ -72,7 +72,7 @@
 
                 <div class="entry-meta">
                     <span class="readmore"><a href="<?php the_permalink(); ?>"><?=$get_details?> <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
-                    <span class="date"><?php twentyeleven_posted_on(); ?></span>
+                    <span class="date"><?php vernissage_posted_on(); ?></span>
                 </div>
             </div>    
         <?php } wp_reset_query(); ?>
@@ -91,7 +91,7 @@
 
                 <div class="entry-meta">
                     <span class="readmore"><a href="<?php the_permalink(); ?>"><?=$get_details?> <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
-                    <span class="date"><?php twentyeleven_posted_on(); ?></span>
+                    <span class="date"><?php vernissage_posted_on(); ?></span>
                 </div>
             </div>    
         <?php } wp_reset_query(); ?>
@@ -111,7 +111,7 @@
 
                 <div class="entry-meta">
                     <span class="readmore"><a href="<?php the_permalink(); ?>"><?=$get_details?> <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
-                    <span class="date"><?php twentyeleven_posted_on(); ?></span>
+                    <span class="date"><?php vernissage_posted_on(); ?></span>
                 </div>
             </div>    
         <?php } wp_reset_query(); ?>
@@ -119,7 +119,7 @@
         </div>
     
     <?php else : ?>
-            <h3><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h3>
+            <h3>Nothing Found</h3>
     <?php endif; ?>
 </div>
 <div id="social">

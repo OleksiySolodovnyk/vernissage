@@ -7,7 +7,7 @@
 
             <div id="header">
                 <h1><?php the_title(); ?></h1>
-                <span><?php twentyeleven_posted_on(); ?></span>
+                <span><?php vernissage_posted_on(); ?></span>
             </div>
 
             <div class="desc-column first">
