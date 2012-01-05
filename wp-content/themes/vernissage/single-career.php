@@ -9,12 +9,49 @@
     
     <div id="content">
         <?php the_content(); ?>
-        <address><em>Contact information: </em></address>
+        <address>
+            <em>
+                <?php 
+                $lng = qtrans_getLanguage();
+                if ($lng == "ru")
+                {
+                    echo "Контакты:";
+                }
+                else if ($lng == "en")
+                {
+                    echo "Contact information:";
+                }
+                else if ($lng == "fr")
+                {
+                    echo "Informations de contact:";
+                }
+                ?>
+            </em>
+        </address>
         <address><em><?php echo get_post_meta($post->ID, 'Career phone', true); ?></em></address>
         <address><em><?php echo get_post_meta($post->ID, 'Career email', true); ?></em></address>
     </div>
     <div id="content-foo">
-        <span class="readmore"><a href="javascript:window.history.back();"><img class="left-arrow" src="<?php echo get_template_directory_uri(); ?>/images/arrow-left.png" alt="arrow" />Backward</a></span>
+        <span class="readmore">
+            <a href="javascript:window.history.back();"><img class="left-arrow" src="<?php echo get_template_directory_uri(); ?>/images/arrow-left.png" alt="arrow" />
+                
+                <?php 
+                $lng = qtrans_getLanguage();
+                if ($lng == "ru")
+                {
+                    echo "Назад";
+                }
+                else if ($lng == "en")
+                {
+                    echo "Backward";
+                }
+                else if ($lng == "fr")
+                {
+                    echo "En arrière:";
+                }
+                ?>
+            </a>
+        </span>
     </div>
     <?php endwhile; ?>
 </div>

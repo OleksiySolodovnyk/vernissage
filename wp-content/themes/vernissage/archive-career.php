@@ -3,7 +3,23 @@
 <div id="divider"></div>
 <div id="main">
     <div id="header">
-        <h1>CAREER OPPORTUNITIES</h1>
+        <h1>
+            <?php 
+            $lng = qtrans_getLanguage();
+            if ($lng == "ru")
+            {
+                echo "ВАКАНСИИ";
+            }
+            else if ($lng == "en")
+            {
+                echo "CAREER OPPORTUNITIES";
+            }
+            else if ($lng == "fr")
+            {
+                echo "EMPLOIS";
+            }
+            ?>
+        </h1>
     </div>
     
     <div id="content">
@@ -13,7 +29,28 @@
         <div class="briefcareer">
             <a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             <?php the_excerpt(); ?>
-             <span class="readmore"><a href="<?php the_permalink(); ?>">Get Details<img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
+             <span class="readmore">
+                 <a href="<?php the_permalink(); ?>">
+                     
+                    <?php 
+                    $lng = qtrans_getLanguage();
+                    if ($lng == "ru")
+                    {
+                        echo "Детали";
+                    }
+                    else if ($lng == "en")
+                    {
+                        echo "Get Details";
+                    }
+                    else if ($lng == "fr")
+                    {
+                        echo "Оbtenir des détails";
+                    }
+                    ?>
+                     
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" />
+                 </a>
+             </span>
         </div>
         <?php
             $count++;

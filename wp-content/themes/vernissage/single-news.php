@@ -20,7 +20,25 @@
 
             <div class="desc-column">
                 <?php the_content(); ?>
-                <span class="readmore"><a href="javascript:window.history.back();"><img class="left-arrow" src="<?php echo get_template_directory_uri(); ?>/images/arrow-left.png" alt="arrow" />Back</a></span>
+                <span class="readmore">
+                    <a href="javascript:window.history.back();"><img class="left-arrow" src="<?php echo get_template_directory_uri(); ?>/images/arrow-left.png" alt="arrow" />
+                        <?php 
+                        $lng = qtrans_getLanguage();
+                        if ($lng == "ru")
+                        {
+                            echo "Назад";
+                        }
+                        else if ($lng == "en")
+                        {
+                            echo "Backward";
+                        }
+                        else if ($lng == "fr")
+                        {
+                            echo "En arrière:";
+                        }
+                        ?>
+                    </a>
+                </span>
             </div>
 
     <?php endwhile; ?>

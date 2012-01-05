@@ -37,7 +37,23 @@ get_header(); ?>
             </div>
         </div>
         <div class="res-column">
-            <h3>CONTACT</h3>
+            <h3>
+                <?php 
+                $lng = qtrans_getLanguage();
+                if ($lng == "ru")
+                {
+                    echo "КОНТАКТЫ";
+                }
+                else if ($lng == "en")
+                {
+                    echo "CONTACT";
+                }
+                else if ($lng == "fr")
+                {
+                    echo "CONTACT";
+                }
+                ?>
+            </h3>
             <div class="google-map">
                 <?php
                     if(function_exists('pronamic_google_maps')) {

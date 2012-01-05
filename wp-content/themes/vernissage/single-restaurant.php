@@ -12,7 +12,23 @@ get_header(); ?>
                     <?php the_content(); ?>
                 </div>
                 <div class="res-column">
-                    <h3>CONTACT</h3>
+                    <h3>
+                        <?php 
+                        $lng = qtrans_getLanguage();
+                        if ($lng == "ru")
+                        {
+                            echo "КОНТАКТЫ";
+                        }
+                        else if ($lng == "en")
+                        {
+                            echo "CONTACT";
+                        }
+                        else if ($lng == "fr")
+                        {
+                            echo "CONTACT";
+                        }
+                        ?>
+                    </h3>
                     <div class="google-map">
                         <?php
 
@@ -45,7 +61,24 @@ get_header(); ?>
                     <img src="<?php bloginfo('template_directory'); ?>/images/master.png" alt="master" />
                     
                     <div id="hours">
-                        <h3>OPENING HOURS</h3>
+                        <h3>
+                            <?php 
+                            $lng = qtrans_getLanguage();
+                            if ($lng == "ru")
+                            {
+                                echo "ВРЕМЯ РАБОТЫ";
+                            }
+                            else if ($lng == "en")
+                            {
+                                echo "OPENING HOURS";
+                            }
+                            else if ($lng == "fr")
+                            {
+                                echo "HEURES D'OUVERTURE";
+                            }
+                            ?>
+                            
+                        </h3>
                         <p>
                             <?php 
                             $key = "openingHours_" .$lng;
