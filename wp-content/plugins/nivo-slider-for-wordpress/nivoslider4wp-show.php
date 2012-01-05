@@ -13,13 +13,30 @@
 
 	?>
 	<div id="slider">
-				<?php $items = $wpdb->get_results("SELECT nivoslider4wp_id,nivoslider4wp_type,nivoslider4wp_text_headline,nivoslider4wp_image_link,nivoslider4wp_image_status,nivoslider4wp_head_headline FROM {$wpdb->prefix}nivoslider4wp WHERE nivoslider4wp_image_status = 1 OR nivoslider4wp_image_status IS NULL ORDER BY nivoslider4wp_order,nivoslider4wp_id"); ?>
+				<?php $items = $wpdb->get_results("SELECT nivoslider4wp_id,nivoslider4wp_type,nivoslider4wp_text_headline,nivoslider4wp_image_link,nivoslider4wp_image_status,nivoslider4wp_head_headline,nivoslider4wp_head_headline_en,nivoslider4wp_text_headline_en,nivoslider4wp_head_headline_fr,nivoslider4wp_text_headline_fr FROM {$wpdb->prefix}nivoslider4wp WHERE nivoslider4wp_image_status = 1 OR nivoslider4wp_image_status IS NULL ORDER BY nivoslider4wp_order,nivoslider4wp_id"); ?>
+				
+				<?php
+					$lng = qtrans_getLanguage();
+				?>
+				
 				<?php foreach($items as $item) : ?>
 						<?php
+						
+						if ($lng == "ru") {
+							$slogan_head = $item->nivoslider4wp_head_headline;
+							$slogan_text = $item->nivoslider4wp_text_headline;
+						} else if ($lng == "en") {
+							$slogan_head = $item->nivoslider4wp_head_headline_en;
+							$slogan_text = $item->nivoslider4wp_text_headline_en;
+						} else if ($lng == "fr") {
+							$slogan_head = $item->nivoslider4wp_head_headline_fr;
+							$slogan_text = $item->nivoslider4wp_text_headline_fr;
+						}
+						
 						if(!$item->nivoslider4wp_image_link){ ?>
-						<img src="<?php echo $ns4wp_filesurl.$item->nivoslider4wp_id.'_s.'.$item->nivoslider4wp_type; ?>" alt="<?php echo stripslashes($item->nivoslider4wp_text_headline); ?>" imgHead='<?php echo stripslashes($item->nivoslider4wp_head_headline); ?>' title="<?php echo stripslashes($item->nivoslider4wp_text_headline); ?>"/>
+						<img src="<?php echo $ns4wp_filesurl.$item->nivoslider4wp_id.'_s.'.$item->nivoslider4wp_type; ?>" alt="<?php echo stripslashes($slogan_text); ?>" imgHead='<?php echo stripslashes($slogan_head); ?>' title="<?php echo stripslashes($slogan_text); ?>"/>
 						<?php } else { ?>
-						<a href="<?php echo $item->nivoslider4wp_image_link;?>"><img src="<?php echo $ns4wp_filesurl.$item->nivoslider4wp_id.'_s.'.$item->nivoslider4wp_type; ?>" alt="<?php echo stripslashes($item->nivoslider4wp_text_headline); ?>" imgHead='<?php echo stripslashes($item->nivoslider4wp_head_headline); ?>' title="<?php echo stripslashes($item->nivoslider4wp_text_headline); ?>"/></a>
+						<a href="<?php echo $item->nivoslider4wp_image_link;?>"><img src="<?php echo $ns4wp_filesurl.$item->nivoslider4wp_id.'_s.'.$item->nivoslider4wp_type; ?>" alt="<?php echo stripslashes($slogan_text); ?>" imgHead='<?php echo stripslashes($slogan_head); ?>' title="<?php echo stripslashes($slogan_text); ?>"/></a>
 						<?php } ?>
 				<?php endforeach; ?>
 		</div>

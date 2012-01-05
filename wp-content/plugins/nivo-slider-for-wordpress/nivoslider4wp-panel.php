@@ -96,13 +96,17 @@
 				'nivoslider4wp_image_link' => $_POST['nivoslider4wp_image_link'],
 				'nivoslider4wp_image_status' => 1,
 				'nivoslider4wp_head_headline' => $_POST['nivoslider4wp_file_head_headline'],
+				'nivoslider4wp_head_headline_en' => $_POST['nivoslider4wp_file_head_headline_en'],
+				'nivoslider4wp_head_headline_fr' => $_POST['nivoslider4wp_file_head_headline_fr'],
+				'nivoslider4wp_text_headline_en' => $_POST['nivoslider4wp_file_text_headline_en'],
+				'nivoslider4wp_text_headline_fr' => $_POST['nivoslider4wp_file_text_headline_fr']
 			);
 			
 			$conditions = array( 'nivoslider4wp_id' => $_POST['nivoslider4wp_file_id']);
 			
 			$values_types = array('%d','%d','%d','%d','%d','%d','%s','%s','%s','%s');
 			$conditions_types = array('%d');
-			$wpdb->update($wpdb->prefix.'nivoslider4wp', $values, $conditions, $values_types, $conditions_types);
+			$wpdb->update($wpdb->prefix.'nivoslider4wp', $values, $conditions, null, $conditions_types);
 			unset($_GET);
 		}
 
@@ -157,7 +161,11 @@
 				
 				$ns4wp_image_link = $item->nivoslider4wp_image_link;
 				$ns4wp_file_head_headline = $item->nivoslider4wp_head_headline;
+				$ns4wp_file_head_headline_en = $item->nivoslider4wp_head_headline_en;
+				$ns4wp_file_head_headline_fr = $item->nivoslider4wp_head_headline_fr;
 				$ns4wp_file_text_headline = $item->nivoslider4wp_text_headline;
+				$ns4wp_file_text_headline_en = $item->nivoslider4wp_text_headline_en;
+				$ns4wp_file_text_headline_fr = $item->nivoslider4wp_text_headline_fr;
 				$ns4wp_file_id = $_GET['edit'];
 				$ns4wp_original_image_dir = $ns4wp_filesdir.$ns4wp_file_id.'_o.'.$ns4wp_file_type[1];
 				$ns4wp_original_image_url = $ns4wp_filesurl.$ns4wp_file_id.'_o.'.$ns4wp_file_type[1];
@@ -247,13 +255,32 @@
   </h3>
   <div style="width:<?php echo get_option('nivoslider4wp_width'); ?>px;height:<?php echo get_option('nivoslider4wp_height'); ?>px;overflow:hidden;"> <img src="<?php echo $ns4wp_original_image_url.'?'.rand(1,1000); ?>" id="preview" /> </div>
   <form name="nivoslider4wp_coords" method="post" id="edit_form" action="">
-    <label for="nivoslider4wp_file_head_headline"><?php _e('Image head(optional)','nivoslider4wp'); ?></label>
-	<textarea name="nivoslider4wp_file_head_headline" id="nivoslider4wp_file_head_headline" class="edit"><?php echo stripslashes(@$ns4wp_file_head_headline); ?></textarea>
   
-    <label for="nivoslider4wp_file_text_headline"><?php _e('Image caption(optional)','nivoslider4wp'); ?></label>
+	<!-- Slogan head -->
+    <label for="nivoslider4wp_file_head_headline"><?php _e('Image head (RUS)','nivoslider4wp'); ?></label>
+	<textarea name="nivoslider4wp_file_head_headline" id="nivoslider4wp_file_head_headline" class="edit"><?php echo stripslashes(@$ns4wp_file_head_headline); ?></textarea>
+	
+	<label for="nivoslider4wp_file_head_headline_en"><?php _e('Image head (ENG)','nivoslider4wp'); ?></label>
+	<textarea name="nivoslider4wp_file_head_headline_en" id="nivoslider4wp_file_head_headline_en" class="edit"><?php echo stripslashes(@$ns4wp_file_head_headline_en); ?></textarea>
+	
+	<label for="nivoslider4wp_file_head_headline_fr"><?php _e('Image head (FRN)','nivoslider4wp'); ?></label>
+	<textarea name="nivoslider4wp_file_head_headline_fr" id="nivoslider4wp_file_head_headline_fr" class="edit"><?php echo stripslashes(@$ns4wp_file_head_headline_fr); ?></textarea>
+	<!-- End Slogan head -->
+  
+	<!-- Slogan Text -->
+    <label for="nivoslider4wp_file_text_headline"><?php _e('Image caption (RUS)','nivoslider4wp'); ?></label>
 		<textarea name="nivoslider4wp_file_text_headline" id="nivoslider4wp_file_text_headline" class="edit"><?php echo stripslashes(@$ns4wp_file_text_headline); ?></textarea>
+		
+	<label for="nivoslider4wp_file_text_headline_en"><?php _e('Image caption (ENG)','nivoslider4wp'); ?></label>
+		<textarea name="nivoslider4wp_file_text_headline_en" id="nivoslider4wp_file_text_headline_en" class="edit"><?php echo stripslashes(@$ns4wp_file_text_headline_en); ?></textarea>
+		
+	<label for="nivoslider4wp_file_text_headline_fr"><?php _e('Image caption (FRN)','nivoslider4wp'); ?></label>
+		<textarea name="nivoslider4wp_file_text_headline_fr" id="nivoslider4wp_file_text_headline_fr" class="edit"><?php echo stripslashes(@$ns4wp_file_text_headline_fr); ?></textarea>
+	<!-- End slogan text -->	
+	
 	<label for="nivoslider4wp_image_link"><?php _e('Image link, please use <strong>http://</strong>(optional)', 'nivoslider4wp'); ?></label>
 		<input type="text" name="nivoslider4wp_image_link" id="nivoslider4wp_image_link" value="<?php echo stripslashes(@$ns4wp_image_link); ?>" class="edit" />
+
 	
 	<input type="hidden" id="x" name="x" />
     <input type="hidden" id="y" name="y" />
