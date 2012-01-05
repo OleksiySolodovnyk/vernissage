@@ -1,7 +1,9 @@
 <?php
 get_header(); ?>
 
-        <?php s3slider_show(); ?>
+        <?php //s3slider_show(); ?>
+        <?php if (function_exists('nivoslider4wp_show')) { nivoslider4wp_show(); } ?>
+
 
 <div id="main">    
         <?php
