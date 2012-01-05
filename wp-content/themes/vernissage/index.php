@@ -34,6 +34,22 @@ get_header(); ?>
             }
         }
         
+        $lng = qtrans_getLanguage();
+        $get_details = "";
+        if ($lng == "ru")
+        {
+            $get_details = "Узнать Детали";
+        }
+        else if ($lng == "en")
+        {
+            $get_details = "Get Details";
+        }
+        else if ($lng == "fr")
+        {
+            $get_details = "Оbtenir des détails";
+        }
+            
+        
         ?>
     
         <div class="column first">
@@ -48,7 +64,7 @@ get_header(); ?>
                 </div>
 
                 <div class="entry-meta">
-                    <span class="readmore"><a href="<?php the_permalink(); ?>">Узнать Детали <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
+                    <span class="readmore"><a href="<?php the_permalink(); ?>"><?=$get_details?> <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
                     <span class="date"><?php twentyeleven_posted_on(); ?></span>
                 </div>
             </div>    
@@ -67,7 +83,7 @@ get_header(); ?>
                 </div>
 
                 <div class="entry-meta">
-                    <span class="readmore"><a href="<?php the_permalink(); ?>">Узнать Детали <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
+                    <span class="readmore"><a href="<?php the_permalink(); ?>"><?=$get_details?> <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
                     <span class="date"><?php twentyeleven_posted_on(); ?></span>
                 </div>
             </div>    
@@ -87,7 +103,7 @@ get_header(); ?>
                 </div>
 
                 <div class="entry-meta">
-                    <span class="readmore"><a href="<?php the_permalink(); ?>">Узнать Детали <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
+                    <span class="readmore"><a href="<?php the_permalink(); ?>"><?=$get_details?> <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" /></a></span>
                     <span class="date"><?php twentyeleven_posted_on(); ?></span>
                 </div>
             </div>    
