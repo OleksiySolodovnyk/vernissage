@@ -79,8 +79,21 @@ get_header(); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" />
                 </a>
             </span><br/>
-            <p><?php echo get_post_meta($post->ID, 'reservation', true); ?></p>
-            <p><?php echo get_post_meta($post->ID, 'address', true); ?></p>
+            <p>
+                <?php 
+
+                $lng = qtrans_getLanguage();
+                $key = "reservation_" .$lng;
+                echo get_post_meta($post->ID, $key, true); 
+
+                ?>
+            </p>
+            <p>
+                <?php
+                $key = "address_" .$lng;
+                echo get_post_meta($post->ID, $key, true); 
+                ?>
+            </p>
            <img src="<?php bloginfo('template_directory'); ?>/images/wifi.png" alt="wifi" />
                     <img src="<?php bloginfo('template_directory'); ?>/images/visa.png" alt="visa" />
                     <img src="<?php bloginfo('template_directory'); ?>/images/master.png" alt="master" />
