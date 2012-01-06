@@ -45,6 +45,7 @@ get_header(); ?>
                         <?php 
                         
                         $lng = qtrans_getLanguage();
+                        echo $lng;
                         $key = "reservation_" .$lng;
                         echo get_post_meta($post->ID, $key, true); 
                         
