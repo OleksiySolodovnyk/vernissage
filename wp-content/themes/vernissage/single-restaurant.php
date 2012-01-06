@@ -41,6 +41,22 @@ get_header(); ?>
                         }
                         ?>
                     </div>
+                    
+                    <span class="readmore">
+                        <a href="http://maps.google.com/maps?q=<?=substr(get_post_meta($post->ID, Pronamic_Google_Maps_Post::META_KEY_LATITUDE, true),0,7);?>+<?=substr(get_post_meta($post->ID, Pronamic_Google_Maps_Post::META_KEY_LONGITUDE, true),0,7);?>&hl=ru&t=m">
+                            <?php
+                            if ($lng == "ru") {
+                                echo "Показать на Google Maps";
+                            } else if ($lng == "en") {
+                                echo "View on Google Maps";
+                            } else if ($lng == "fr") {
+                                echo "Afficher dans Google Maps";
+                            }
+                            ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow.png" alt="arrow" />
+                        </a>
+                    </span><br/>
+                    
                     <p>
                         <?php 
                         
