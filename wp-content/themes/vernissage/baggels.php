@@ -135,5 +135,3 @@ get_header(); ?>
             <div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
         </div>
 <?php get_footer(); ?>
-
-?>
